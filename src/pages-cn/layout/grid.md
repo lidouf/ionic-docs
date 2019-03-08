@@ -15,12 +15,12 @@ contributors:
 <link rel="stylesheet" href="https://unpkg.com/@ionic/core/css/text-transformation.css">
 <link rel="stylesheet" href="https://unpkg.com/@ionic/core/css/flex-utils.css">
 
-# Responsive Grid
+# 响应式栅格
 
-The grid is a powerful mobile-first flexbox system for building custom layouts. It is composed of three units — a [grid](/docs/api/grid), [row(s)](/docs/api/row) and [column(s)](/docs/api/col). Columns will expand to fill their row, and will resize to fit additional columns. It is based on a 12 column layout with different breakpoints based on the screen size. The number of columns can be customized using CSS.
+栅格是一个强大的、移动优先的flexbox系统，用来构建自定义布局。它由三个基本单位组成--[网格](/docs/api/grid), [行](/docs/api/row)和[列](/docs/api/col)。列会扩展去填充它们的行，并且会调整大小去适应额外的列。它基于12列布局，根据不同的屏幕尺寸会有不同的breakpoint。列的数量可以使用CSS进行修改。
 
 
-## How it works
+## 它是如何工作的
 
 ```html
 <ion-grid>
@@ -44,25 +44,21 @@ The grid is a powerful mobile-first flexbox system for building custom layouts. 
 </ion-grid>
 ```
 
-- Grids act as a container for all rows and columns. Grids take up the full width of their container,
-but adding the `fixed` attribute will specify the width per screen size, see [grid size](#grid-size) below.
-- Rows are horizontal groups of columns that line the columns up properly.
-- Content should be placed within columns, and only columns may be immediate children of rows.
-- The `size-{breakpoint}` attributes indicate the number of columns to use out of the default 12 per row.
-So, `size="4"` can be added to a column in order to take up 1/3 of the grid, or 4 of the 12 columns.
-- Columns without a value for size will automatically have equal widths. For example, four instances of `size-sm` will each automatically be 25% wide for the small breakpoint and up.
-- Column widths are set as a percentage, so they’re always fluid and sized relative to their parent element.
-- Columns have padding between individual columns, however, the padding can be removed from the grid and
-columns by adding `no-padding` on the grid.
-- There are five grid tiers, one for each responsive breakpoint: all breakpoints (extra small), small, medium, large, and extra large.
-- Grid tiers are based on minimum widths, meaning they apply to their tier and all those larger than them
-(e.g., `size-sm="4"` applies to small, medium, large, and extra large devices).
-- Grids can easily be customized via CSS variables. See [customizing the grid](#customizing-the-grid).
+- 网格就像盛装所有行和列的一个容器。网格会占有所有容器的完整宽度，但如果添加了`fixed`属性则会指定每个屏幕的大小，具体参见下方的[网格大小](#grid-size)。
+- 行是列的水平分组，它能够恰当的安排各列（在水平上）。
+- 内容应该放在列内，仅有列可能才是行最直接的子孙。
+- `size-{breakpoint}`属性表示使用每行默认的12列里面的几列。因此，`size="4"`可以加在列上面表示占有网格的1/3，或者12列中的4列。
+- 如果列没有标明大小则会自动等宽。例如，四个`size-sm`实例表示每个实例自动获得small breakpoint及以上25%的宽度。
+- 列宽按百分比设置，所以它们通常是流式的(fluid)，并且大小是相对于它们的父元素而言的。
+- 各列之间有间隔，但是，可以移除网格和列之间的间隔，通过在在网格添加`no-padding`属性实现。
+- 有五个网格层级，每个表示一种响应式breakpoint：all breakpoints (extra small), small, medium, large, and extra large。
+- 网格层级基于最小宽度表示，意思是大于等于该尺寸的使用这个层级。(例如，`size-sm="4"`生效的是small, medium, large, and extra large设备)。
+- 网格可以通过CSS变量方便进行定制。参见[定制网格](#customizing-the-grid)。
 
 
-## Grid size
+## 网格大小
 
-By default, the grid will take up 100% width. To set a specific width based on the screen size, add the `fixed` attribute. The width of the grid for each breakpoint is defined in the `--ion-grid-width-{breakpoint}` CSS variables. For more information, see [customizing the grid](#customizing-the-grid).
+网格默认占用100%宽度。要基于屏幕大小设置指定的网格宽度，添加`fixed`属性。每个breakpoint的网格宽度定义在`--ion-grid-width-{breakpoint}` CSS变量之中。参见[定制网格](#customizing-the-grid)获得更多信息。
 
 | Name     | Value    | Description                                         |
 |----------|----------|-----------------------------------------------------|
@@ -73,10 +69,9 @@ By default, the grid will take up 100% width. To set a specific width based on t
 | xl       | 1140px   | Set grid width to 1140px when (min-width: 1200px)   |
 
 
-## Grid attributes
+## 网格属性
 
-The grid takes up full width and has padding added to it based on the screen size. There are two
-attributes that can be used to adjust this behavior.
+网格默认占有100%的屏幕尺寸并且列之间有间隔。有两个属性可以用来调整这个行为：
 
 | Property        | Description                                                                      |
 |-----------------|----------------------------------------------------------------------------------|
@@ -84,9 +79,9 @@ attributes that can be used to adjust this behavior.
 | fixed           | Set a max width based on the screen size.                                        |
 
 
-## Default breakpoints
+## 默认breakpoints
 
-The default breakpoints are defined by the `--ion-grid-breakpoints` CSS variable. It can be customized to use different values for the breakpoint, rename and add/remove breakpoints. For more information, see [customizing the grid](#customizing-the-grid).
+默认breakpoints由`--ion-grid-breakpoints` CSS变量定义。可以通过不同的值去定制breakpoint，重命名以及添加/移除breakpoints。参见[定制网格](#customizing-the-grid)获得更多信息。
 
 | Name     | Value    | Width Prefix | Offset Prefix | Push Prefix  | Pull Prefix | Description                                       |
 |----------|----------|--------------|---------------|--------------|-------------|---------------------------------------------------|
@@ -97,11 +92,11 @@ The default breakpoints are defined by the `--ion-grid-breakpoints` CSS variable
 | xl       | 1200px   | `size-xl-`   | `offset-xl-`  | `push-xl-`   | `pull-xl-`  | Set columns when (min-width: 1200px)              |
 
 
-## Auto-layout columns
+## 自动布局列
 
-### Equal-width
+### 等宽
 
-By default, columns will take up equal width inside of a row for all devices and screen sizes.
+列默认会对所有设备和屏幕大小进行等分占用。
 
 ```html
 <ion-grid>
@@ -137,9 +132,9 @@ By default, columns will take up equal width inside of a row for all devices and
 </ion-grid>
 ```
 
-### Setting one column width
+### 设定单列宽度
 
-Set the width of one column and the others will automatically resize around it. This can be done using our predefined grid attributes. In the example below, the other columns will resize no matter the width of the center column.
+设置单列的宽度，则其它列会根据它自动调整大小。可以通过我们的预定义网格属性来实现。在下面的例子中，不管中间那列的宽度怎么变化，其它的列都会自动调整。
 
 ```html
 <ion-grid>
@@ -180,9 +175,9 @@ Set the width of one column and the others will automatically resize around it. 
 </ion-grid>
 ```
 
-### Variable-width
+### 变长
 
-By setting the `size-{breakpoint}` properties to `"auto"` the column can size itself based on the natural width of its content. This is extremely useful for setting a column width using pixels. The columns next to the variable-width column will resize to fill the row.
+通过设置`size-{breakpoint}`属性为`"auto"`，列可以基于内容的实际宽度进行调整。这对于以像素设置列宽尤其有用。变长列相邻的列会自动调整宽度来填充行。
 
 ```html
 <ion-grid>
@@ -229,11 +224,11 @@ By setting the `size-{breakpoint}` properties to `"auto"` the column can size it
 ```
 
 
-## Responsive attributes
+## 响应式属性
 
-### All breakpoints
+### 所有breakpoints
 
-To customize a column's width for all devices and screens, set the `size` property. The value of this property determines how many columns this column should take up out of the total available columns.
+要定制所有设备和屏幕的列尺寸，设置`size`属性。该属性的值决定占有所有有效总列数中的多少列。
 
 ```html
 <ion-grid>
@@ -262,9 +257,9 @@ To customize a column's width for all devices and screens, set the `size` proper
 </ion-grid>
 ```
 
-###  Stacked to horizontal
+### 水平堆砌
 
-Use a combination of width and breakpoint attributes to create a grid that starts out stacked on extra small screens before becoming horizontal on small screens.
+联合使用宽度和breakpoint属性创建网格系统，可以使它从最小屏开始堆积，然后再变成小屏幕。
 
 ```html
 <ion-grid>
@@ -294,11 +289,11 @@ Use a combination of width and breakpoint attributes to create a grid that start
 ```
 
 
-## Reordering
+## 重新排列
 
-### Offsetting columns
+### 列位移
 
-Move columns to the right by adding the `offset` property. This property increases the margin left of the column by the number of specified columns. For example, in the following grid the last column will be offset by 3 columns and take up 3 columns:
+将列移到右侧，需要添加`offset`属性。该属性通过设置指定列数来增加列左侧的空白。举例，下面网格最后一列会移动3列并且占用3列：
 
 ```html
 <ion-grid>
@@ -317,7 +312,7 @@ Move columns to the right by adding the `offset` property. This property increas
 </ion-grid>
 ```
 
-Offsets can also be added based on screen breakpoints. Here's an example of a grid where the last column will be offset by 3 columns for `md` screens and up:
+Offsets也能依据屏幕breakpoints设置。下面的例子，最后1列将会对`md`及以上屏幕位移3列：
 
 ```html
 <ion-grid>
@@ -341,9 +336,9 @@ Offsets can also be added based on screen breakpoints. Here's an example of a gr
 </ion-grid>
 ```
 
-### Push and pull
+### Push和pull
 
-Reorder the columns by adding the `push` and `pull` properties. These properties adjust the `left` and `right` of the columns by the specified number of columns making it easy to reorder columns. For example, in the following grid the column with the `1 of 2` description will actually be the last column and the `2 of 2` will be the first column.
+通过添加`push`和`pull`属性对列进行重排。这两个属性通过指定列数量来调节`left`和`right`，非常方便重排列。例如，下面网格中列描述为`1 of 2`的这列将会是最后一列，而`2 of 2`的则将会是第一列。
 
 ```html
 <ion-grid>
@@ -362,7 +357,7 @@ Reorder the columns by adding the `push` and `pull` properties. These properties
 </ion-grid>
 ```
 
-Push and pull can also be added based on screen breakpoints. In the following example, the column with the `3 of 3` column description will actually be the first column for `md` screens and up:
+Push和pull也可以基于屏幕breakpoint添加。下面的例子中，列描述为`3 of 3`在`md`及以上屏中实际上应该排在第一列：
 
 ```html
 <ion-grid>
@@ -387,11 +382,11 @@ Push and pull can also be added based on screen breakpoints. In the following ex
 ```
 
 
-## Alignment
+## 对齐
 
-### Vertical alignment
+### 垂直对齐
 
-All columns can be vertically aligned inside of a row by adding different attributes to the row. For a list of available attributes, see [css utilities](/docs/layout/css-utilities#flex-container-properties).
+通过添加不同的行属性，所有行内的列可以进行垂直对齐。详细的属性列表，请参见[使用CSS](/docs/layout/css-utilities#flex-container-properties)。
 
 ```html
 <ion-grid>
@@ -475,7 +470,7 @@ All columns can be vertically aligned inside of a row by adding different attrib
 </ion-grid>
 ```
 
-Columns can also align themselves differently than other columns by adding the alignment attribute directly to the column. For a list of available attributes, see [css utilities](/docs/layout/css-utilities#flex-item-properties).
+不同列也可以添加不同的对齐属性，通过在列上面添加对齐属性来实现。详细的属性列表，请参见[使用CSS](/docs/layout/css-utilities#flex-item-properties)。
 
 ```html
 <ion-grid>
@@ -507,9 +502,9 @@ Columns can also align themselves differently than other columns by adding the a
 </ion-grid>
 ```
 
-### Horizontal alignment
+### 水平对齐
 
-All columns can be horizontally aligned inside of a row by adding different attributes to the row. For a list of available attributes, see [css utilities](/docs/layout/css-utilities#flex-container-properties).
+通过添加不同的行属性可以设置列的水平对齐。详细的属性列表，请参见[使用CSS](/docs/layout/css-utilities#flex-container-properties)。
 
 ```html
 <ion-grid>
@@ -581,23 +576,23 @@ All columns can be horizontally aligned inside of a row by adding different attr
 ```
 
 
-## Customizing the grid
+## 定制网格
 
-Using our built-in CSS variables, it’s possible to customize the predefined grid attributes. Change the values of the padding, the number of columns, and more.
+通过我们内建的CSS变量，能够更改预置的网格属性。更改间隔的值，列数目，等等。
 
 
-### Number of columns
+### 列数目
 
-The number of grid columns can be modified with the `--ion-grid-columns` CSS variable. By default there are 12 grid columns, but this can be changed to any positive integer and be used to calculate the width of each individual column.
+列数目可以通过`--ion-grid-columns` CSS变量进行修改。默认有12个栅格列，但这个值可以更改为任意正整数，为每个独立列计算实际宽度。
 
 ```css
 --ion-grid-columns:               12;
 ```
 
 
-### Grid Padding
+### 网格留白
 
-The padding on the grid container can be set for all breakpoints with the `--ion-grid-padding` CSS variable. To override individual breakpoints, use the `--ion-grid-padding-{breakpoint}` CSS variables.
+网格留白容器可以通过`--ion-grid-padding` CSS变量对所有breakpoints进行设置。要覆盖单独的某个breakpoint，使用`--ion-grid-padding-{breakpoint}` CSS变量。
 
 
 ```css
@@ -611,9 +606,9 @@ The padding on the grid container can be set for all breakpoints with the `--ion
 ```
 
 
-### Grid width
+### 网格宽度
 
-To customize the width values of the fixed grid based on the screen size, override the values of `--ion-grid-width-{breakpoint}` for each breakpoint.
+要更改网格对于屏幕大小的定义，覆盖不同breakpoint所对应的`--ion-grid-width-{breakpoint}`值。
 
 ```css
 --ion-grid-width-xs:              100%;
@@ -624,9 +619,9 @@ To customize the width values of the fixed grid based on the screen size, overri
 ```
 
 
-### Column Padding
+### 列留白
 
-The padding on the columns can be set for all breakpoints with the `--ion-grid-column-padding` CSS variable. To override individual breakpoints, use the `--ion-grid-column-padding-{breakpoint}` CSS variables.
+要更改所有breakpoint的列留白，通过设置`--ion-grid-column-padding` CSS变量实现。要覆盖单独的breakpoint，则使用`--ion-grid-column-padding-{breakpoint}` CSS变量实现。
 
 
 ```css
