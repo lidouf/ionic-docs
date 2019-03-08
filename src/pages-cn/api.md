@@ -2,6 +2,6 @@
 template: api-index
 ---
 
-# API Index
+# API索引
 
-Each Ionic [component](/docs/components) consists of one or more [custom elements](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements). Each custom element, in turn, may expose properties, methods, events, and CSS custom properties.
+每个[Ionic组件](/docs/components)都由一个或多个[自定义元素](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements)组成。反过来，每个自定义元素则会暴露出属性，方法，事件以及CSS自定义属性。

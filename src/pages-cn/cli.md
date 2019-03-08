@@ -4,19 +4,19 @@
 
 # Ionic CLI
 
-The Ionic command-line interface ([CLI](/docs/faq/glossary#cli)) is your go-to tool for developing Ionic apps.
+Ionic命令行接口([CLI](/docs/faq/glossary#cli))是用来开发Ionic应用的快捷工具。
 
-## Installation
+## 安装
 
-The Ionic CLI can be installed globally with npm:
+Ionic CLI可以使用npm进行全局安装：
 
 ```shell
 $ npm install -g ionic
 ```
 
-## Help
+## 帮助
 
-The Ionic CLI ships with command documentation that is accessible with the `--help` flag.
+Ionic CLI自带了命令行方式的文档，可以使用`--help`选项进行访问。
 
 ```shell
 $ ionic <command> --help
@@ -24,13 +24,13 @@ $ ionic <command> --help
 
 <!-- TODO: image? -->
 
-## Architecture
+## 架构
 
-The Ionic CLI is built with [TypeScript](/docs/faq/glossary#typescript) and [Node.js](/docs/faq/glossary#node). It supports Node 6+, but the latest Node LTS is always recommended. Follow development on the open source <a href="https://github.com/ionic-team/ionic-cli" target="_blank">Github repository</a>.
+Ionic CLI使用[TypeScript](/docs/faq/glossary#typescript)和[Node.js](/docs/faq/glossary#node)进行构建。它支持Node 6+，但我们始终推荐最新版的Node LTS版本。关注<a href="https://github.com/ionic-team/ionic-cli" target="_blank">Github仓库</a>的开发。
 
-## Troubleshooting
+## 问题解决
 
-To troubleshoot issues with the Ionic CLI, the following may be useful:
+关于Ionic CLI使用的问题，下面这些方法可能有用：
 
 - Make sure the latest version of the Ionic CLI is installed. Update with `npm install -g ionic@latest`.
 - Make sure the latest Node LTS is installed. See [Node & npm](/docs/installation/environment#node-npm) environment setup.
