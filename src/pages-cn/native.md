@@ -1,16 +1,16 @@
 # Ionic Native
-Ionic Native is a curated set of Cordova plugins that make it easy to add native functionality to any Ionic app.
+Ionic Native是一个Cordova插件的管理套件，它使任何Ionic应用添加原生功能更为方便。
 
-These docs are for apps built with Ionic Framework 4.0.0 and greater. For older Ionic v3 projects, [please see here](http://ionicframework.com/docs/v3/native/).
+这些文档适用于使用>=4.0.0的Ionic框架版本的应用。对于老版的Ionic v3版本项目，[请参见这里](http://ionicframework.com/docs/v3/native/)。
 
-Ionic Native is available in two editions: Community Edition and Enterprise Edition.
+Ionic Native在两个分发版中可以使用：社区版和企业版。
 
-## Community Edition
-Ionic Native CE is a set of open source plugins maintained by community contributors.
-Ionic does not maintain, fix, improve, or provide any guarantee that these plugins function.
+## 社区版
+Ionic Native CE是一套开源的插件，由社区贡献者进行维护。
+Ionic不负责维护，修正，提升，或者对这些插件功能提供任何担保。
 
-## Enterprise Edition
-For teams that require dedicated native plugin support, fixes, improvements, or implementation guidance, Ionic Native EE is available.
+## 企业版
+对于那些需要专用的原生插件支持，修正，提升，或者需要实现指导的团队，可以选择Ionic Native EE。
 
 <div class="native-ee-pricing">
   <div class="table-wrap">
@@ -104,12 +104,12 @@ For teams that require dedicated native plugin support, fixes, improvements, or 
 </div>
 
 ## Usage
-All plugins have two components - the native code (Cordova) and the JavaScript code.
-Cordova plugins are also wrapped in a `Promise` or `Observable` in order to provide a common plugin interface.
-Below are various framework options using the Camera plugin as an example.
+所有插件都有两个组件--原生代码(Cordova)和JavaScript代码。
+Cordova插件同样同样以`Promise`或`Observable`进行封装，这样可以提供通用的插件接口。
+下面以不同框架下使用相机插件进行举例。
 
 ## Angular
-Import the plugin in a `@NgModule` and add it to the list of Providers. For Angular, the import path should end with `/ngx`.  Angular's change detection is automatically handled.
+通过`@NgModule`引入插件，将它加入到Providers列表。对于Angular来说，引入路径必须以`/ngx`结尾。Angular的更改侦测会自动处理。
 
 ```typescript
 // app.module.ts
@@ -130,7 +130,7 @@ import { Camera } from '@ionic-native/camera/ngx';
 export class AppModule { }
 ```
 
-After the plugin has been declared, it can be imported and injected like any other service:
+当插件声明完成后，则可以象其它服务一样被引用以及注入：
 
 ```typescript
 // camera.service.ts
@@ -163,7 +163,7 @@ export class PhotoService {
 ```
 
 ## Vanilla JavaScript
-Ionic Native can also be used in a vanilla JavaScript app targeting ES2015+ and/or TypeScript. To use any plugin, import the class from the appropriate package and use its static methods:
+Ionic Native同样可以用于vanilla JavaScript应用，它使用ES2015+和/或TypeScript。要使用任何插件，从合适的包里面使用静态方法引入class：
 
 ```js
 import { Camera } from '@ionic-native/camera';
